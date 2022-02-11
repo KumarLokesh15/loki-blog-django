@@ -32,7 +32,7 @@ DEBUG = False
 #     getenv("APP_HOST")
 # ]
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1','loki-blog-django.herokuapp.com']
 
 # Application definition
 
