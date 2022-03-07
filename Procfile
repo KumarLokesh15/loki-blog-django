@@ -1,1 +1,1 @@
-web: gunicorn loki-blog-django.wsgi --log-file -
+web: gunicorn mySite.wsgi --log-file -
