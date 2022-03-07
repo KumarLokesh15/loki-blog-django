@@ -25,14 +25,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-p52r_)uno%y^1y@41om^)yve@*ud)29^wq1sjg1w)9&tmf^jhw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-# DEBUG = getenv("IS_PRODUCTION", True)
+# DEBUG = False
+DEBUG = getenv("IS_DEVELOPMENT", True)
 
-# ALLOWED_HOSTS = [
-#     getenv("APP_HOST")
-# ]
+ALLOWED_HOSTS = [
+    getenv("APP_HOST","localhost")
+]
 
-ALLOWED_HOSTS = ['127.0.0.1','loki-blog-django.herokuapp.com']
+# ALLOWED_HOSTS = ['127.0.0.1','loki-blog-django.herokuapp.com']
 
 # Application definition
 
@@ -134,7 +134,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
 
-MEDIA_ROOT = BASE_DIR/"uploads"
+MEDIA_ROOT = BASE_DIR/"uploads"/"posts"
 MEDIA_URL = "/files/"
 
 # Default primary key field type
