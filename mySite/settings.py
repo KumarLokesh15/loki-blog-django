@@ -28,11 +28,11 @@ SECRET_KEY = 'django-insecure-p52r_)uno%y^1y@41om^)yve@*ud)29^wq1sjg1w)9&tmf^jhw
 # DEBUG = False
 DEBUG = getenv("IS_DEVELOPMENT", True)
 
-# ALLOWED_HOSTS = [
-#     getenv("APP_HOST","localhost")
-# ]
+ALLOWED_HOSTS = [
+    getenv("APP_HOST","localhost")
+]
 
-ALLOWED_HOSTS = ['127.0.0.1','loki-blog-django.herokuapp.com']
+# ALLOWED_HOSTS = ['127.0.0.1','loki-blog-django.herokuapp.com']
 
 # Application definition
 
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    "whitenoise.runserver_nostatic",
     'django.contrib.staticfiles',
 ]
 
@@ -134,9 +135,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
 
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-
-MEDIA_ROOT = BASE_DIR/"uploads"
+MEDIA_ROOT = BASE_DIR/"uploads"/"posts"
 MEDIA_URL = "/files/"
 
 # Default primary key field type
